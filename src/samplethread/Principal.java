@@ -8,6 +8,7 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
+        r = new hiloReloj(txtReloj);
         ins();
     }
 
@@ -151,7 +152,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void iniciarRelojActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarRelojActionPerformed
-        r = new hiloReloj(txtReloj);
+        
         new Thread(r).start();
     }//GEN-LAST:event_iniciarRelojActionPerformed
 

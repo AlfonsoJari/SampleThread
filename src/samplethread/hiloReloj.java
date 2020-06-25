@@ -1,12 +1,8 @@
 package samplethread;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import javax.swing.JTextField;
 
 public class hiloReloj implements Runnable {
-
-    DateTimeFormatter formateador = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     private boolean estado;
     private JTextField txtR;
@@ -16,16 +12,16 @@ public class hiloReloj implements Runnable {
     public hiloReloj(JTextField t) {
         this.txtR = t;
     }
-    
-    public void detener(){
+
+    public void detener() {
         this.estado = false;
     }
 
     private String formato() {
         String hora = "";
-        if (s==60 && m==60){
-            s=0;
-            m=0;
+        if (s == 60 && m == 60) {
+            s = 0;
+            m = 0;
         }
         if (s < 60) {
             if (s < 10 && m < 10) {
@@ -43,7 +39,7 @@ public class hiloReloj implements Runnable {
             hora = m + ":" + s;
             return hora;
         } else {
-            s=0;
+            s = s - 60;
             m++;
             if (m < 10) {
                 hora = "0" + m + ":0" + s;
@@ -55,17 +51,16 @@ public class hiloReloj implements Runnable {
     }
 
     public void masS() {
-        this.s = this.s+10;
+        this.s = this.s + 10;
     }
-    
+
     public void masM() {
-        this.m = this.m+1;
+        this.m = this.m + 1;
     }
-    
 
     @Override
     public void run() {
-        estado=true;
+        estado = true;
         while (estado) {
             try {
                 Thread.sleep(1000);
