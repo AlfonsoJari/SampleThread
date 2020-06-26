@@ -1,6 +1,5 @@
 package samplethread;
 
-
 public class Principal extends javax.swing.JFrame {
 
     private ContadorHilo c = null;
@@ -152,7 +151,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void iniciarRelojActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarRelojActionPerformed
-        
         new Thread(r).start();
     }//GEN-LAST:event_iniciarRelojActionPerformed
 
